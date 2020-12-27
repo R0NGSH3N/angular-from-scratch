@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MaxLengthValidator } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-from-scratch';
+
+  person = {
+    id: 1,
+    name: 'r0ngsh3n',
+    gender: 'male'
+  }
+  
+
+  onNameChange(person): void{
+    this.person = person;
+  }
 }

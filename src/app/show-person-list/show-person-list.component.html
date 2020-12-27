@@ -1,0 +1,8 @@
+<div *ngFor="let person of persons">
+    <div [appGender] = "person.gender">
+    <app-show-person  
+        (changeName)="onNameChange($event)" 
+        [person]="person">
+    </app-show-person>
+    </div>
+</div>
