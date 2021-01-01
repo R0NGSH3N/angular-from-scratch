@@ -1,3 +1,6 @@
+<header>
+    <div>{{ persons | genderpipe }}</div>
+</header>
 <div *ngFor="let person of persons">
     <div [appGender] = "person.gender">
     <app-show-person  

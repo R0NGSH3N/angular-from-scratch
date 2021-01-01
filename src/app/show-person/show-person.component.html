@@ -1,5 +1,5 @@
 <p>
     <li>id: {{ person.id}}</li>
-    <li *ngIf="person.name">name: {{ person.name}}</li>
+    <li *ngIf="person.name">name: {{ person.name | slice: 0:4 | uppercase}}</li>
     <li>gender: {{ person.gender}}</li>
 </p>

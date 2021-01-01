@@ -1,27 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { PersonListService } from '../person-list.service';
 
 @Component({
   selector: 'app-show-person-list',
   templateUrl: './show-person-list.component.html',
   styleUrls: ['./show-person-list.component.css']
 })
-export class ShowPersonListComponent {
+export class ShowPersonListComponent implements OnInit {
+  persons; 
 
-  persons = [{
-    id: 1,
-    name: 'r0ngsh3n',
-    gender: 'male'
-  },
-  {
-    id: 2,
-    name: 'johndoe',
-    gender: 'male'
-  },
-  {
-    id: 3,
-    name: 'jeandoe',
-    gender: 'female'
+  constructor(private service: PersonListService){}
+
+
+  ngOnInit(){
+    this.persons = this.service.get();
   }
-  ]
+
 
 }
